@@ -578,8 +578,8 @@ async function main() {
         openingHours: 'Not verified', hoursVerified: false, featured: !!a.featured, popularity: a.pop,
       });
       const specs = [
-        { name: `(Demo) ${a.name} Main Parking`, type: 'on-site', dLat: 0.0006, dLng: 0.0004, rate: { car: 40, bike: 15, ev: 60 }, areas: [['Basement Parking', 'B', 30, ['car', 'ev']], ['Outdoor Parking', 'O', 22, ['car']], ['Two-Wheeler Zone', 'T', 12, ['bike']]], featured: !!a.featured, is24x7: false },
-        { name: `(Demo) Public Parking near ${a.name}`, type: 'public', dLat: -0.0035, dLng: 0.0025, rate: { car: 25, bike: 10, ev: 40 }, areas: [['Main Parking Area', 'M', 50, ['car', 'bike']]], featured: false, is24x7: true },
+        { name: `(Demo) ${a.name} Main Parking`, type: 'on-site', dLat: 0.0006, dLng: 0.0004, rate: { car: 40, bike: 15, other: 60 }, areas: [['Basement Parking', 'B', 30, ['car', 'other']], ['Outdoor Parking', 'O', 22, ['car']], ['Two-Wheeler Zone', 'T', 12, ['bike']]], featured: !!a.featured, is24x7: false },
+        { name: `(Demo) Public Parking near ${a.name}`, type: 'public', dLat: -0.0035, dLng: 0.0025, rate: { car: 25, bike: 10, other: 40 }, areas: [['Main Parking Area', 'M', 50, ['car', 'bike']]], featured: false, is24x7: true },
       ];
       const built = await createParking({ attractionId: attraction._id, cityId, a, specs, address: a.address });
       nLoc += built.locations; nSlots += built.slots;
@@ -605,7 +605,7 @@ async function main() {
       openingHours: 'Not verified', hoursVerified: false, featured: false, popularity: 20,
     });
     const specs = [
-      { name: `(Demo) Public Parking — ${c.name}`, type: 'public', dLat: 0.0012, dLng: 0.0010, rate: { car: 25, bike: 10, ev: 40 }, areas: [['Main Parking Area', 'M', 50, ['car', 'bike']]], featured: false, is24x7: true },
+      { name: `(Demo) Public Parking — ${c.name}`, type: 'public', dLat: 0.0012, dLng: 0.0010, rate: { car: 25, bike: 10, other: 40 }, areas: [['Main Parking Area', 'M', 50, ['car', 'bike']]], featured: false, is24x7: true },
     ];
     const built = await createParking({ attractionId: attraction._id, cityId, a: { name: c.name, address: `${c.name}, ${c.state}, India`, lat, lng }, specs, address: `${c.name}, ${c.state}, India` });
     nLoc += built.locations; nSlots += built.slots;

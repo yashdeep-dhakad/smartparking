@@ -7,7 +7,7 @@ import AttractionCard from '../components/AttractionCard.jsx';
 import ParkingCard from '../components/ParkingCard.jsx';
 import LoadingSpinner from '../components/LoadingSpinner.jsx';
 import ErrorMessage from '../components/ErrorMessage.jsx';
-import SearchBar from '../components/SearchBar.jsx';
+import CitySearch from '../components/CitySearch.jsx';
 
 // Real parking photos (Wikimedia Commons) so the landing page shows parked cars/two-wheelers.
 const HERO_PARKING = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Parking_lot_in_Ayyappa_society.jpg/1920px-Parking_lot_in_Ayyappa_society.jpg';
@@ -54,7 +54,7 @@ export default function Home() {
             <h1>Find Your Perfect Parking Spot</h1>
             <p className="hero-sub">Discover attractions, compare nearby parking, and reserve your space before you arrive.</p>
             <div className="hero-search">
-              <SearchBar value={q} onChange={setQ} onSubmit={go} placeholder="Search a city, e.g. Indore" label="Search cities" button />
+              <CitySearch value={q} onChange={setQ} onSubmit={go} placeholder="Search a city, e.g. Jaipur" label="Search cities" button />
             </div>
             <p className="hero-hint">No account needed to explore. You only log in when you book.</p>
             <div className="hero-stats">

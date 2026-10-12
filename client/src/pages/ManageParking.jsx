@@ -6,12 +6,12 @@ import ErrorMessage from '../components/ErrorMessage.jsx';
 import { VEHICLES } from '../utils/format.js';
 
 const TYPES = ['public', 'private', 'on-site', 'street', 'multi-level'];
-const VT = ['car', 'bike', 'ev'];
+const VT = ['car', 'bike', 'other'];
 const HHMM = /^([01]\d|2[0-3]):[0-5]\d$/;
 
 const emptyForm = {
   name: '', attraction: '', type: 'public', address: '', lat: '', lng: '', description: '',
-  rate_car: '', rate_bike: '', rate_ev: '', minHours: 1, dailyCap: 0, convenienceFee: 0, taxPercent: 18,
+  rate_car: '', rate_bike: '', rate_other: '', minHours: 1, dailyCap: 0, convenienceFee: 0, taxPercent: 18,
   is24x7: false, open: '06:00', close: '23:00', verified: false, dataSource: 'demo', notes: '', featured: false, isActive: true,
 };
 
@@ -125,7 +125,7 @@ export default function ManageParking() {
           { name: 'description', label: 'Description', type: 'textarea' },
           { name: 'rate_car', label: 'Car rate per hour (₹)', type: 'number', help: 'Leave blank if cars are not supported.' },
           { name: 'rate_bike', label: 'Two-wheeler rate per hour (₹)', type: 'number' },
-          { name: 'rate_ev', label: 'Electric car rate per hour (₹)', type: 'number' },
+          { name: 'rate_other', label: 'Other vehicle rate per hour (₹)', type: 'number', help: 'For any vehicle that is not a car or two-wheeler.' },
           { name: 'minHours', label: 'Minimum billable hours', type: 'number' },
           { name: 'dailyCap', label: 'Maximum charge per booking (₹, 0 = none)', type: 'number' },
           { name: 'convenienceFee', label: 'Convenience fee per booking (₹)', type: 'number' },

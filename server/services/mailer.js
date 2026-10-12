@@ -20,7 +20,7 @@ function getTransport() {
   return transporter;
 }
 
-const VEHICLE = { car: 'Car', bike: 'Two-wheeler', ev: 'EV' };
+const VEHICLE = { car: 'Car', bike: 'Two-wheeler', other: 'Other' };
 const money = (paise) => `₹${(Number(paise || 0) / 100).toFixed(2)}`;
 const when = (d) => new Date(d).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' });
 

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Bike, Car, Clock, MapPin, Navigation, Zap } from 'lucide-react';
+import { Bike, Car, Clock, MapPin, Navigation, Truck } from 'lucide-react';
 import VerifiedBadge from './VerifiedBadge.jsx';
 import FavoriteButton from './FavoriteButton.jsx';
-import { PARKING_TYPE, directionsUrl, formatRupees } from '../utils/format.js';
+import { PARKING_TYPE, VEHICLES, directionsUrl, formatRupees } from '../utils/format.js';
 
-const ICON = { car: Car, bike: Bike, ev: Zap };
+const ICON = { car: Car, bike: Bike, other: Truck };
 
 export default function ParkingCard({ parking: p }) {
   const hours = p.operatingHours?.is24x7 ? 'Open 24 hours' : `${p.operatingHours?.open}–${p.operatingHours?.close}`;
@@ -18,7 +18,7 @@ export default function ParkingCard({ parking: p }) {
         <h3>{p.name}</h3>
         <p className="muted small"><MapPin size={14} aria-hidden="true" /> {p.address}</p>
         <div className="chips">
-          {p.vehicleTypes?.map((v) => { const I = ICON[v] || Car; return <span key={v} className="chip"><I size={14} aria-hidden="true" /> {v === 'bike' ? 'Two-wheeler' : v === 'ev' ? 'EV' : 'Car'}</span>; })}
+          {p.vehicleTypes?.map((v) => { const I = ICON[v] || Car; return <span key={v} className="chip"><I size={14} aria-hidden="true" /> {VEHICLES[v] || v}</span>; })}
         </div>
         <p className="small"><Clock size={14} aria-hidden="true" /> {hours}{!p.verified && ' (unverified)'}</p>
         <div className="row-between">

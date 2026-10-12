@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch.js';
 import CityCard from '../components/CityCard.jsx';
-import SearchBar from '../components/SearchBar.jsx';
+import CitySearch from '../components/CitySearch.jsx';
 import Pagination from '../components/Pagination.jsx';
 import LoadingSpinner from '../components/LoadingSpinner.jsx';
 import ErrorMessage from '../components/ErrorMessage.jsx';
@@ -38,7 +38,7 @@ export default function Cities() {
         {items.length > 0 && <span className="muted">{items.length} cit{items.length === 1 ? 'y' : 'ies'}</span>}
       </div>
       <div className="toolbar">
-        <SearchBar value={text} onChange={setText} onSubmit={(v) => update({ search: v })} placeholder="Search cities" label="Search cities" button />
+        <CitySearch value={text} onChange={setText} onSubmit={(v) => update({ search: v })} placeholder="Search cities, e.g. ja" label="Search cities" button />
         <label className="field-inline">State
           <select value={state} onChange={(e) => update({ state: e.target.value })}>
             <option value="">All states</option>

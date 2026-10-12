@@ -35,7 +35,7 @@ export const PAYMENT_STATUS = {
   failed: { label: 'Failed', tone: 'red' },
   refunded: { label: 'Refunded', tone: 'blue' },
 };
-export const VEHICLES = { car: 'Car', bike: 'Two-wheeler', ev: 'Electric car' };
+export const VEHICLES = { car: 'Car', bike: 'Two-wheeler', other: 'Other' };
 export const PARKING_TYPE = { public: 'Public', private: 'Private', 'on-site': 'On-site', street: 'Street', 'multi-level': 'Multi-level' };
 
 export const directionsUrl = (lat, lng) => `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
