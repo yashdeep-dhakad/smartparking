@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ParkWise – Smart City Parking Finder & Booking (MERN)
 
 Guests can browse everything without logging in. Login is required only to **book, pay, check in, view bookings and use favorites**.
@@ -155,3 +156,7 @@ npm run test:integration    # needs MongoDB: concurrent booking, hold expiry, du
 | Images are random photos | Seed uses placeholder pictures (picsum.photos). Edit the image URL in the admin panel. |
 | `npm test` finds no tests | Use Node 22 LTS (globs in `node --test`). |
 | Booking says "outside operating hours" | Pick a time inside the opening hours shown on the parking page (IST). |
+=======
+# smartparking
+Smart Parking across india.
+>>>>>>> 8d49a203c23ace747e0017ace61f3a71a2a573c1
